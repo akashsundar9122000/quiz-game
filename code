@@ -1,0 +1,98 @@
+var readlineSync = require('readline-sync');
+
+var userName = readlineSync.question("Enter Your Name: ");
+
+console.log("Hi! "+userName+" Welcome to DO YOU KNOW AKASH");
+
+console.log('--------------')
+
+var score = 0;
+
+function play(question, answer){
+  console.log(question)
+  var yourAnswer = readlineSync.question("Enter Your Answer: ");
+  if(yourAnswer.toUpperCase() == answer.toUpperCase()){
+    console.log("You are right!");
+    score++;
+  }
+  else{
+    console.log("You are wrong");
+  }
+  console.log('--------------')
+}
+
+var question1 = {
+  question : "What is the homwtown of AKASH?",
+  answer : "pudumavilangai" 
+}
+
+var question2 = {
+  question : "In which college AKASH is pursuing his degree?",
+  answer : "RMD" 
+}
+
+var question3 = {
+  question : "What is favourite color of AKASH?",
+  answer : "blue" 
+}
+
+var question4 = {
+  question : "What is the favourite sport of AKASH?",
+  answer : "cricket" 
+}
+
+var question5 = {
+  question : "Who is the favourite actor of AKASH?",
+  answer : "vijay" 
+}
+
+var question6 = {
+  question : "Who is the favourite cricketer of AKASH?",
+  answer : "raina" 
+}
+
+var question7 = {
+  question : "When is AKASH's birthday?",
+  answer : "9/12/2000" 
+}
+
+var question8 = {
+  question : "Is AKASH is a movie lover?",
+  answer : "yes" 
+}
+
+var question9 = {
+  question : "What is AKASH's favourite flavour of icecream?",
+  answer : "vanilla" 
+}
+
+var question10 = {
+  question : "Is AKASH is familiar with web or android development?",
+  answer : "android" 
+}
+
+
+var array=[question1,question2,question3,question4,question5,question6,question7,question8,question9,question10]
+
+for(var i=0;i<10;i++){
+  play(array[i].question, array[i].answer);
+}
+
+console.log("Your Score is :"+score);
+console.log('--------------')
+
+if(score==10){
+  console.log("YOU KNOW AKASH VERY WELL")
+}
+
+else if(score>=7){
+  console.log("YOU KNOW AKASH WELL")
+}
+
+else if(score>=5){
+  console.log("YOU KNOW AKASH")
+}
+
+else{
+  console.log("YOU DONT KNOW AKASH VERY WELL")
+}
